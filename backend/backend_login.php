@@ -29,11 +29,12 @@ if (empty($senha)) {
     ]);
 }
 
+
 // Inclui a conexão com o banco de dados
 require_once "../database/conexao_banco.php";
 
 // Prepara e executa a consulta SQL para buscar o usuário pelo email
-$query = "SELECT * FROM responsavel WHERE email = '{$email}' and senha = '{$senha}';";
+$query = "SELECT * FROM responsavel WHERE email = '{$email}';";
 $retorna_banco = $conexao->query($query);
 $usuario = $retorna_banco->fetch(pdo::FETCH_ASSOC);
 
@@ -42,6 +43,14 @@ if (!$usuario) {
     retorna_para_login([
         'status' => 'erro',
         'mensagem' => 'Usuário não encontrado'
+    ]);
+}
+
+// Verifica se a senha confere
+if ($usuario['senha'] !== $senha) {
+    retorna_para_login([
+        'status' => 'erro_senha',
+        'mensagem' => 'Senha incorreta'
     ]);
 }
 

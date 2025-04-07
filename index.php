@@ -83,6 +83,8 @@
           // Verifica se houve erro no retorno da API
           if (variavel_com_retorno_da_api.status == "erro") {
             alert("Erro ao logar... usuario não encontrado");
+          } else if (variavel_com_retorno_da_api.status == "erro_senha") {
+            alert("Senha incorreta.");
           } else {
             // se bater os dados inseridos no login com o do banco ele redireciona para a pagina principal
             window.location.href = "http://localhost/TCC_PAPINHO/frontend/frontend_home.php";
