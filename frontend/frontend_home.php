@@ -30,7 +30,8 @@ if (empty($_SESSION['id_responsavel'])) {
         <div class="container-fluid">
 
             <a class="navbar-brand" href="#">
-                <img src="/assets/imagens/Papinho_logo.png" class="rounded-circle me-2" width="40" height="40">
+                <img src="http://localhost/TCC_PAPINHO/assets/imagens/Papinho_logo.png" class="rounded-circle me-2" width="40" height="40">
+
                 Bem vindo(a): <?php echo $_SESSION['nome_responsavel']; ?>!</a>
             </button>
 
