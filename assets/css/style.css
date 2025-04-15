@@ -1,61 +1,43 @@
 body {
-  background-color: #add8e6;
+  background-color: #e6adcb;
   margin: 0;
   padding: 0;
 }
 
-.form-container {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-}
-/* Aplica apenas à página que tem id="home-body" */
-#home-body {
-  background-color: #add8e6;
-  margin: 0;
-  padding-top: 70px; /* para compensar a navbar fixa */
-}
-
-/* Centraliza o conteúdo dentro da página home */
+/* Ajusta o conteúdo da home (sem afetar navbar) */
 #home-body .main-content {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 70px); /* altura total - altura da navbar */
   flex-direction: column;
-  text-align: center;
+  align-items: center;
+  padding: 30px 20px;
 }
-/* Estilo das imagens de categoria */
+
+/* Título */
+.titulo {
+  font-size: 24px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Grade com 3 colunas de imagens */
+.grid-categorias {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Estilo das imagens */
 .categoria {
   width: 150px;
   height: 150px;
-  margin: 10px;
+  object-fit: cover;
+  border-radius: 15px;
   cursor: pointer;
   border: 2px solid #ccc;
-  border-radius: 15px;
-  object-fit: cover; /* Garante que a imagem preencha o quadrado sem distorcer */
-  transition: transform 0.2s; /* Suaviza o efeito de zoom no hover */
+  transition: transform 0.2s;
 }
 
-/* Efeito de zoom ao passar o mouse */
 .categoria:hover {
   transform: scale(1.05);
-}
-
-/* Layout de grade para as imagens */
-.grid-categorias {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-/* Título centralizado */
-.titulo {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 24px;
 }
