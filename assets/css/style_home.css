@@ -1,0 +1,31 @@
+/* Estilo das imagens de categoria */
+.categoria {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  object-fit: cover; /* Garante que a imagem preencha o quadrado sem distorcer */
+  transition: transform 0.2s; /* Suaviza o efeito de zoom no hover */
+}
+
+/* Efeito de zoom ao passar o mouse */
+.categoria:hover {
+  transform: scale(1.05);
+}
+
+/* Layout de grade para as imagens */
+.grid-categorias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Título centralizado */
+.titulo {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 24px;
+}

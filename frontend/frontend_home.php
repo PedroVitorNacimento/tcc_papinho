@@ -17,7 +17,7 @@ if (empty($_SESSION['id_responsavel'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://localhost/TCC_PAPINHO/assets/css/style.css" />
+    <link rel="stylesheet" href="http://localhost/TCC_PAPINHO/assets/css/style_home.css" />
 
 
     <link
@@ -58,8 +58,8 @@ if (empty($_SESSION['id_responsavel'])) {
 
         <!--grid com imagens representando categorias-->
         <div class="grid-categorias">
-            <img src="/assets/imagens/comer.png" class="categoria" onclick="tocarSom('comer')">
-            <img src="/assets/imagens/brincar.png" class="categoria" onclick="tocarSom('brincar')">
+            <img src="http://localhost/TCC_PAPINHO/assets/imagens/comer.png" class="categoria" onclick="tocarSom('comer')">
+            <img src="http://localhost/TCC_PAPINHO/assets/imagens/fome.png" class="categoria" onclick="tocarSom('brincar')">
             <img src="/assets/imagens/banheiro.png" class="categoria" onclick="tocarSom('banheiro')">
             <img src="/assets/imagens/dormir.png" class="categoria" onclick="tocarSom('dormir')">
             <img src="/assets/imagens/triste.png" class="categoria" onclick="tocarSom('triste')">
@@ -67,6 +67,24 @@ if (empty($_SESSION['id_responsavel'])) {
         </div>
 
     </div>
+    <!-- Áudios que serão tocados ao clicar nas imagens -->
+    <audio id="som-comer" src="http://localhost/TCC_PAPINHO/assets/sounds/fome.mp3"></audio>
+    <audio id="som-brincar" src="http://localhost/TCC_PAPINHO/assets/sounds/teste.mp3"></audio>
+    <audio id="som-banheiro" src="/assets/sounds/banheiro.mp3"></audio>
+    <audio id="som-dormir" src="/assets/sounds/dormir.mp3"></audio>
+    <audio id="som-triste" src="/assets/sounds/triste.mp3"></audio>
+    <audio id="som-feliz" src="/assets/sounds/feliz.mp3"></audio>
+
+    <!-- Script para tocar o som correspondente -->
+    <script>
+        function tocarSom(nome) {
+            const som = document.getElementById('som-' + nome);
+            if (som) {
+                som.currentTime = 0; // Reinicia o áudio do começo
+                som.play(); // Toca o áudio
+            }
+        }
+    </script>
 </body>
 
 </html>
