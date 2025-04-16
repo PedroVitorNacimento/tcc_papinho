@@ -32,7 +32,7 @@ if (empty($_SESSION['id_responsavel'])) {
         <div class="container-fluid">
 
             <a class="navbar-brand" href="#">
-                <img src="http://localhost/TCC_PAPINHO/assets/imagens/Papinho_logo.png" class="rounded-circle me-2" width="40" height="40">
+                <img src="http://localhost/TCC_PAPINHO/assets/imagens/fundo.png" class="rounded-circle me-2" width="40" height="40">
 
                 Bem vindo(a): <?php echo $_SESSION['nome_responsavel']; ?>!</a>
             </button>
@@ -58,23 +58,49 @@ if (empty($_SESSION['id_responsavel'])) {
 
         <!--grid com imagens representando categorias-->
         <div class="grid-categorias">
-            <img src="http://localhost/TCC_PAPINHO/assets/imagens/comer.png" class="categoria" onclick="tocarSom('comer')">
-            <img src="http://localhost/TCC_PAPINHO/assets/imagens/fome.png" class="categoria" onclick="tocarSom('brincar')">
-            <img src="/assets/imagens/banheiro.png" class="categoria" onclick="tocarSom('banheiro')">
-            <img src="/assets/imagens/dormir.png" class="categoria" onclick="tocarSom('dormir')">
-            <img src="/assets/imagens/triste.png" class="categoria" onclick="tocarSom('triste')">
-            <img src="/assets/imagens/feliz.png" class="categoria" onclick="tocarSom('feliz')">
+            <img src="http://localhost/TCC_PAPINHO/assets/imagens/comer.png" id="comida" class="categoria" onclick="subMenu('submenu-fome')">
+            <img src="http://localhost/TCC_PAPINHO/assets/imagens/fome.png" id="familia" class="categoria" onclick="subMenu('submenu-familia')">
+            <img src="http://localhost/TCC_PAPINHO/assets/imagens/fundo.png" id="emocao" class="categoria" onclick="subMenu('submenu-emocao')">
+            <img src="http://localhost/TCC_PAPINHO/assets/imagens/fundo.png" class="categoria" onclick="tocarSom('dormir')">
+            <img src="http://localhost/TCC_PAPINHO/assets/imagens/fundo.png" class="categoria" onclick="tocarSom('triste')">
+            <img src="http://localhost/TCC_PAPINHO/assets/imagens/fundo.png" class="categoria" onclick="tocarSom('feliz')">
+        </div>
+        <!--submenu para fome-->
+        <div class="submenu" id="submenu-fome" style="display: none;">
+            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/fome.png" onclick="tocarSom('brincar')">
+            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/fundo.png" onclick="tocarSom('comer')">
+            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/comer.png" onclick="tocarSom('banheiro')">
+        </div>
+        <!--submenu para familia -->
+        <div class="submenu" id="submenu-familia" style="display: none;">
+            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/Mãe.png" onclick="tocarSom('mae')">
+            <img class=" submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/Pai.png" onclick="tocarSom('pai')">
+            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/Vovó.png" onclick="tocarSom('vó')">
+            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/Vovô.png" onclick="tocarSom('vô')">
+        </div>
+
+        <!--submenu para emocao -->
+        <div class="submenu" id="submenu-emocao" style="display: none;">
+            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/triste.png" onclick="tocarSom('triste')">
+            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/feliz.png" onclick="tocarSom('feliz')">
+            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/bravo.png" onclick="tocarSom('bravo')">
         </div>
 
     </div>
     <!-- Áudios que serão tocados ao clicar nas imagens -->
-    <audio id="som-comer" src="http://localhost/TCC_PAPINHO/assets/sounds/fome.mp3"></audio>
-    <audio id="som-brincar" src="http://localhost/TCC_PAPINHO/assets/sounds/teste.mp3"></audio>
-    <audio id="som-banheiro" src="/assets/sounds/banheiro.mp3"></audio>
-    <audio id="som-dormir" src="/assets/sounds/dormir.mp3"></audio>
-    <audio id="som-triste" src="/assets/sounds/triste.mp3"></audio>
-    <audio id="som-feliz" src="/assets/sounds/feliz.mp3"></audio>
+    <div>
 
+        <audio id="som-comer" src="http://localhost/TCC_PAPINHO/assets/sounds/fome.mp3"></audio>
+        <audio id="som-brincar" src="http://localhost/TCC_PAPINHO/assets/sounds/teste.mp3"></audio>
+        <audio id="som-banheiro" src="http://localhost/TCC_PAPINHO/assets/sounds/louco.mp3"></audio>
+        <audio id="som-mae" src="http://localhost/TCC_PAPINHO/assets/sounds/mae.mp3"></audio>
+        <audio id="som-vó" src="http://localhost/TCC_PAPINHO/assets/sounds/vó.mp3"></audio>
+        <audio id="som-vô" src="http://localhost/TCC_PAPINHO/assets/sounds/vô.mp3"></audio>
+        <audio id="som-pai" src="http://localhost/TCC_PAPINHO/assets/sounds/pai.mp3"></audio>
+        <audio id="som-triste" src="http://localhost/TCC_PAPINHO/assets/sounds/triste.mp3"></audio>
+        <audio id="som-feliz" src="http://localhost/TCC_PAPINHO/assets/sounds/feliz.mp3"></audio>
+        <audio id="som-bravo" src="http://localhost/TCC_PAPINHO/assets/sounds/bravo.mp3"></audio>
+    </div>
     <!-- Script para tocar o som correspondente -->
     <script>
         function tocarSom(nome) {
@@ -84,6 +110,56 @@ if (empty($_SESSION['id_responsavel'])) {
                 som.play(); // Toca o áudio
             }
         }
+
+        function subMenu(id) {
+            const subMenu = document.getElementById(id)
+            subMenu.style.display = subMenu.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function tocarSomEAbrirSubmenu(nomeCategoria, idSubmenu) {
+            // Toca o som correspondente à categoria
+            const som = document.getElementById('som-' + nomeCategoria); // Ex: 'som-comer'
+            if (som) {
+                som.currentTime = 0; // Reinicia o áudio do início
+                som.play(); // Toca o áudio
+            }
+
+            // Fecha todos os submenus abertos
+            const todosSubmenus = document.querySelectorAll('.submenu-fome'); // Seleciona todos os submenus pela classe
+            todosSubmenus.forEach(function(submenu) {
+                submenu.style.display = 'none'; // Esconde cada submenu
+            });
+
+            // Exibe o submenu desejado
+            const submenuSelecionado = document.getElementById(idSubmenu); // Pega o submenu pelo ID
+            if (submenuSelecionado) {
+                submenuSelecionado.style.display = 'flex'; // Mostra o submenu escolhido
+            }
+        }
+
+
+        let submenuAberto = null;
+
+        function subMenu(id) {
+            // Fecha o submenu anterior, se existir e for diferente do atual
+            if (submenuAberto && submenuAberto.id !== id) {
+                submenuAberto.style.display = 'none';
+            }
+
+            const novoSubMenu = document.getElementById(id);
+            const visivel = novoSubMenu.style.display === 'flex';
+
+            novoSubMenu.style.display = visivel ? 'none' : 'flex';
+            submenuAberto = visivel ? null : novoSubMenu;
+        }
+
+        // Fecha o submenu se clicar fora dele
+        document.addEventListener('click', function(event) {
+            if (submenuAberto && !submenuAberto.contains(event.target) && !event.target.classList.contains('categoria')) {
+                submenuAberto.style.display = 'none';
+                submenuAberto = null;
+            }
+        });
     </script>
 </body>
 

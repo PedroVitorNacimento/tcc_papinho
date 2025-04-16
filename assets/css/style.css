@@ -1,44 +1,42 @@
-/*teste
 body {
   background-color: #0d5d78;
-  background-image: url("../imagens/fundo.jpg"); /* Caminho ajustado 
-  background-size: cover;
-  background-position: center;
+  background-image: url("http://localhost/TCC_PAPINHO/assets/imagens/fundo1.png");
+  background-repeat: no-repeat; /* ← Impede que ela se repita */
+  background-position: center top; /* Centraliza no topo (ou só 'center') */
+  background-size: 100% auto;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
-}*/
+  max-width: 100%;
+  max-height: 10%;
+}
 
 .form-container {
-  background: white;
+  background: rgb(243, 249, 249);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
 }
-/* Aplica apenas à página que tem id="home-body" */
+
 #home-body {
-  background-color: #11627d;
-  background-image: url("/assets/imagens/fundo.png");
-  background-size: cover;
-  background-position: center;
+  background-color: #0c1214;
   margin: 0;
-  padding-top: 70px; /* para compensar a navbar fixa */
+  padding-top: 70px;
 }
 
-/* Centraliza o conteúdo dentro da página home */
 #home-body .main-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 70px); /* altura total - altura da navbar */
+  height: calc(100vh - 70px);
   flex-direction: column;
   text-align: center;
 }
-/* Estilo das imagens de categoria */
+
 .categoria {
   width: 150px;
   height: 150px;
@@ -46,26 +44,10 @@ body {
   cursor: pointer;
   border: 2px solid #ccc;
   border-radius: 15px;
-  object-fit: cover; /* Garante que a imagem preencha o quadrado sem distorcer */
-  transition: transform 0.2s; /* Suaviza o efeito de zoom no hover */
+  object-fit: cover;
+  transition: transform 0.2s;
 }
 
-/* Efeito de zoom ao passar o mouse */
 .categoria:hover {
   transform: scale(1.05);
-}
-
-/* Layout de grade para as imagens */
-.grid-categorias {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-/* Título centralizado */
-.titulo {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 24px;
 }

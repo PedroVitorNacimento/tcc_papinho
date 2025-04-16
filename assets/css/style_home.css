@@ -29,3 +29,18 @@
   margin-top: 20px;
   font-size: 24px;
 }
+.submenu-img {
+  width: 100px; /* ou qualquer tamanho que você achar melhor */
+  height: 100px;
+  margin: 30px;
+  object-fit: cover;
+  margin: 30px 30px 30px 50px; /* top, right, bottom, left */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  justify-content: center; /* centraliza as imagens dentro do submenu */
+}
+
+.submenu-img:hover {
+  transform: scale(1.05);
+}
