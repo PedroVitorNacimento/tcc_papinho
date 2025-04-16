@@ -1,11 +1,15 @@
+/*teste
 body {
-  background-color: #93db60;
+  background-color: #0d5d78;
+  background-image: url("../imagens/fundo.jpg"); /* Caminho ajustado 
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
-}
+}*/
 
 .form-container {
   background: white;
@@ -17,7 +21,10 @@ body {
 }
 /* Aplica apenas à página que tem id="home-body" */
 #home-body {
-  background-color: #7bef7f;
+  background-color: #11627d;
+  background-image: url("/assets/imagens/fundo.png");
+  background-size: cover;
+  background-position: center;
   margin: 0;
   padding-top: 70px; /* para compensar a navbar fixa */
 }
@@ -37,7 +44,7 @@ body {
   height: 150px;
   margin: 10px;
   cursor: pointer;
-  border: 2px solid #12233d;
+  border: 2px solid #ccc;
   border-radius: 15px;
   object-fit: cover; /* Garante que a imagem preencha o quadrado sem distorcer */
   transition: transform 0.2s; /* Suaviza o efeito de zoom no hover */
