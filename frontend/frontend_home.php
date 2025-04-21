@@ -58,18 +58,20 @@ if (empty($_SESSION['id_responsavel'])) {
 
         <!--grid com imagens representando categorias-->
         <div class="grid-categorias">
-            <img src="http://localhost/TCC_PAPINHO/assets/imagens/comer.png" id="comida" class="categoria" onclick="subMenu('submenu-fome')">
-            <img src="http://localhost/TCC_PAPINHO/assets/imagens/fome.png" id="familia" class="categoria" onclick="subMenu('submenu-familia')">
-            <img src="http://localhost/TCC_PAPINHO/assets/imagens/fundo.png" id="emocao" class="categoria" onclick="subMenu('submenu-emocao')">
+            <img src="http://localhost/TCC_PAPINHO/assets/imagens/Fome_sede.png" id="comida" class="categoria" onclick="subMenu('submenu-fome')">
+            <img src="http://localhost/TCC_PAPINHO/assets/imagens/Família.png" id="familia" class="categoria" onclick="subMenu('submenu-familia')">
+            <img src="http://localhost/TCC_PAPINHO/assets/imagens/Emoções.png" id="emocao" class="categoria" onclick="subMenu('submenu-emocao')">
             <img src="http://localhost/TCC_PAPINHO/assets/imagens/fundo.png" class="categoria" onclick="tocarSom('dormir')">
             <img src="http://localhost/TCC_PAPINHO/assets/imagens/fundo.png" class="categoria" onclick="tocarSom('triste')">
             <img src="http://localhost/TCC_PAPINHO/assets/imagens/fundo.png" class="categoria" onclick="tocarSom('feliz')">
         </div>
         <!--submenu para fome-->
         <div class="submenu" id="submenu-fome" style="display: none;">
-            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/fome.png" onclick="tocarSom('brincar')">
-            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/fundo.png" onclick="tocarSom('comer')">
-            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/comer.png" onclick="tocarSom('banheiro')">
+            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/Água.png" onclick="tocarSom('brincar')">
+            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/Fome.png" onclick="tocarSom('comer')">
+            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/Frutas.png" onclick="tocarSom('banheiro')">
+            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/Lanche.png" onclick="tocarSom('comer')">
+            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/Leite.png" onclick="tocarSom('banheiro')">
         </div>
         <!--submenu para familia -->
         <div class="submenu" id="submenu-familia" style="display: none;">
