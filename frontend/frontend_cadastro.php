@@ -15,7 +15,7 @@
     crossorigin="anonymous" />
 
   <!-- Estilo personalizado -->
-  <link rel="stylesheet" href="http://localhost/TCC_PAPINHO/assets/css/style.css" />
+  <link rel="stylesheet" href="http://localhost/TCC_PAPINHO/assets/css/style1.css" />
 
   <!-- Tema do SweetAlert2 para os alertas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.min.css">

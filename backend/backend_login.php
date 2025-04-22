@@ -59,6 +59,7 @@ if ($usuario['senha'] !== $senha) {
 session_start();
 $_SESSION['id_responsavel'] = $usuario['id_responsavel'];
 $_SESSION['nome_responsavel'] = $usuario['nome_responsavel'];
+$_SESSION['id_crianca'] = $usuario['id_crianca'];
 
 // Retorna sucesso e informa a página para redirecionamento
 retorna_para_login([

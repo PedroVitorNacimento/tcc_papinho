@@ -67,25 +67,25 @@ if (empty($_SESSION['id_responsavel'])) {
         </div>
         <!--submenu para fome-->
         <div class="submenu" id="submenu-fome" style="display: none;">
-            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/Água.png" onclick="tocarSom('brincar')">
-            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/Fome.png" onclick="tocarSom('comer')">
-            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/Frutas.png" onclick="tocarSom('banheiro')">
-            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/Lanche.png" onclick="tocarSom('comer')">
-            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/Leite.png" onclick="tocarSom('banheiro')">
+            <img class="submenu-img" data-som="brincar" src="http://localhost/TCC_PAPINHO/assets/imagens/Água.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-som="brincar" src="http://localhost/TCC_PAPINHO/assets/imagens/Fome.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-som="brincar" src="http://localhost/TCC_PAPINHO/assets/imagens/Frutas.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-som="brincar" src="http://localhost/TCC_PAPINHO/assets/imagens/Lanche.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-som="brincar" src="http://localhost/TCC_PAPINHO/assets/imagens/Leite.png" onclick="tocarSom(this)">
         </div>
         <!--submenu para familia -->
         <div class="submenu" id="submenu-familia" style="display: none;">
-            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/Mãe.png" onclick="tocarSom('mae')">
-            <img class=" submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/Pai.png" onclick="tocarSom('pai')">
-            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/Vovó.png" onclick="tocarSom('vó')">
-            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/Vovô.png" onclick="tocarSom('vô')">
+            <img class="submenu-img" data-som="mae" src="http://localhost/TCC_PAPINHO/assets/imagens/Mãe.png" onclick="tocarSom(this)">
+            <img class=" submenu-img" data-som="pai" src="http://localhost/TCC_PAPINHO/assets/imagens/Pai.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-som="vó" src="http://localhost/TCC_PAPINHO/assets/imagens/Vovó.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-som="vô" src="http://localhost/TCC_PAPINHO/assets/imagens/Vovô.png" onclick="tocarSom(this)">
         </div>
 
         <!--submenu para emocao -->
         <div class="submenu" id="submenu-emocao" style="display: none;">
-            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/triste.png" onclick="tocarSom('triste')">
-            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/feliz.png" onclick="tocarSom('feliz')">
-            <img class="submenu-img" src="http://localhost/TCC_PAPINHO/assets/imagens/bravo.png" onclick="tocarSom('bravo')">
+            <img class="submenu-img" data-id="2" data-som="triste" src="http://localhost/TCC_PAPINHO/assets/imagens/triste.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-id="4" data-som="feliz" src="http://localhost/TCC_PAPINHO/assets/imagens/feliz.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-id="3" data-som="bravo" src="http://localhost/TCC_PAPINHO/assets/imagens/bravo.png" onclick="tocarSom(this)">
         </div>
 
     </div>
@@ -105,13 +105,41 @@ if (empty($_SESSION['id_responsavel'])) {
     </div>
     <!-- Script para tocar o som correspondente -->
     <script>
-        function tocarSom(nome) {
-            const som = document.getElementById('som-' + nome);
-            if (som) {
-                som.currentTime = 0; // Reinicia o áudio do começo
-                som.play(); // Toca o áudio
+        function tocarSom(elemento) {
+            const somNome = elemento.getAttribute('data-som');
+            const imagemId = parseInt(elemento.getAttribute('data-id')); // ID da imagem como número
+
+            if (somNome) {
+                const som = document.getElementById('som-' + somNome);
+                if (som) {
+                    som.currentTime = 0;
+                    som.play();
+                }
             }
+
+            // Envia os dados do clique para o backand
+            fetch('http://localhost/TCC_PAPINHO/backend/backend_salvar_cliques.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        imagemId: imagemId, // Agora é inteiro
+                        timestamp: new Date().toISOString(),
+                        criancaId: 1 // Substituir por ID da criança real, se possível
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data.message);
+                })
+                .catch(err => {
+                    console.error('Erro ao salvar clique:', err);
+                });
         }
+
+
+
 
         function subMenu(id) {
             const subMenu = document.getElementById(id)
