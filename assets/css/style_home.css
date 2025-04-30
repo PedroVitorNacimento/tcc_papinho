@@ -44,3 +44,8 @@
 .submenu-img:hover {
   transform: scale(1.05);
 }
+
+.select-crianca-pequeno {
+  width: 100px;
+  display: inline-block;
+}

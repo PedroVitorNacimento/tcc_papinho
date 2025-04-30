@@ -9,6 +9,12 @@ if (empty($_SESSION['id_responsavel'])) {
     exit;
 }
 
+// Conexão
+require_once "../database/conexao_banco.php";
+$query = "SELECT * FROM crianca WHERE id_responsavel = " . $_SESSION['id_responsavel'];
+$criancas = $conexao->query($query);
+$criancas = $criancas->fetchAll(PDO::FETCH_ASSOC);
+
 // se tiver certo ele  exibe o id do usuario 
 ?>
 <!DOCTYPE html>
@@ -24,18 +30,35 @@ if (empty($_SESSION['id_responsavel'])) {
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet" />
 
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
+
     <title>Papinho-Home</title>
 </head>
 
 <body id="home-body">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
+            <div>
+                <a class="navbar-brand" href="#">
+                    <img src="http://localhost/TCC_PAPINHO/assets/imagens/fundo.png" class="rounded-circle me-2" width="40" height="40">
 
-            <a class="navbar-brand" href="#">
-                <img src="http://localhost/TCC_PAPINHO/assets/imagens/fundo.png" class="rounded-circle me-2" width="40" height="40">
+                    Bem vindo(a): <?php echo $_SESSION['nome_responsavel']; ?>!
+                </a>
 
-                Bem vindo(a): <?php echo $_SESSION['nome_responsavel']; ?>!</a>
-            </button>
+
+
+            </div>
+            <div class="navbar-brand">Selecione uma das crianças cadastradas</div>
+            <!--colocando as crianças do usuario em um tag select para exibir todas as vrianças que aquele usuario cadastrou -->
+            <select id="select-crianca" class="form-control w-auto">
+                <?php foreach ($criancas as $crianca): ?>
+                    <option value="<?= $crianca['id_crianca'] ?>"><?= $crianca['nome_crianca'] ?></option>
+                <?php endforeach; ?>
+            </select>
+
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto"> <!-- ms-auto alinha à direita -->
@@ -44,6 +67,9 @@ if (empty($_SESSION['id_responsavel'])) {
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Gerar relatorio</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="http://localhost/TCC_PAPINHO/frontend/frontend_cadastro_logado.php">Cadastrar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="http://localhost/TCC_PAPINHO/backend/backand_logout.php">Sair</a>
@@ -117,6 +143,8 @@ if (empty($_SESSION['id_responsavel'])) {
                 }
             }
 
+
+
             // Envia os dados do clique para o backand
             fetch('http://localhost/TCC_PAPINHO/backend/backend_salvar_cliques.php', {
                     method: 'POST',
@@ -125,13 +153,13 @@ if (empty($_SESSION['id_responsavel'])) {
                     },
                     body: JSON.stringify({
                         imagemId: imagemId, // Agora é inteiro
-                        timestamp: new Date().toISOString(),
-                        criancaId: 1 // Substituir por ID da criança real, se possível
+                        criancaId: $("#select-crianca").val()
+                        // Substituir por ID da criança real, se possível
                     })
                 })
                 .then(res => res.json())
-                .then(data => {
-                    console.log(data.message);
+                .then(res => {
+                    console.log(res);
                 })
                 .catch(err => {
                     console.error('Erro ao salvar clique:', err);

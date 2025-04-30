@@ -45,6 +45,12 @@
 
   <script>
     // Função para validar e enviar os dados do formulário
+    $("#senha").on("keyup", function(e) {
+      if (e.keyCode == 13) {
+        salvaDados();
+      }
+    })
+
     function salvaDados() {
       let email_form = document.getElementById("login").value;
       let senha_form = document.getElementById("senha").value;
