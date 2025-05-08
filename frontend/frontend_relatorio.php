@@ -126,14 +126,27 @@ $criancas = $conexao->query($query)->fetchAll(PDO::FETCH_ASSOC);
 
                     Swal.fire({
                         title: "Relatório Gerado",
-                        html: html,
+                        html: html + '<button id="btnImprimir" class="swal2-confirm swal2-styled" style="margin-top: 30px;">Imprimir Relatório</button>',
                         width: 600,
                         showCloseButton: true,
                         confirmButtonText: 'Fechar',
                         customClass: {
-                            popup: 'relatorio-popup'
+                        popup: 'relatorio-popup'
                         }
                     });
+
+        
+                    // Função para imprimir o conteúdo do relatorio
+                    document.getElementById('btnImprimir').addEventListener('click', function() {
+                    // Criar uma nova janela para impressão
+                    const janelaImpressao = window.open('', '', 'height=600,width=800');
+                    janelaImpressao.document.write('<html><head><title>Imprimir Relatório</title></head><body>');
+                    janelaImpressao.document.write(html); // Adiciona o HTML do relatório na janela
+                    janelaImpressao.document.write('</body></html>');
+                    janelaImpressao.document.close();
+                    janelaImpressao.print();
+                });
+            
                 }
             }, "json");
         }
