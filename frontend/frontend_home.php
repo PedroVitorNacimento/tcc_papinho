@@ -23,7 +23,7 @@ $criancas = $criancas->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://localhost/TCC_PAPINHO/assets/css/style_home.css" />
+    <link rel="stylesheet" href="http://localhost/TCC_PAPINHO/assets/css/style_home1.css" />
 
 
     <link
@@ -66,7 +66,7 @@ $criancas = $criancas->fetchAll(PDO::FETCH_ASSOC);
                         <a class="nav-link active" aria-current="page" href="frontend_home.php">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Gerar relatorio</a>
+                        <a class="nav-link" href="frontend_relatorio.php">Gerar relatorio</a>
                     </li>
                     <li>
                         <a class="nav-link" href="http://localhost/TCC_PAPINHO/frontend/frontend_cadastro_logado.php">Cadastrar</a>
@@ -88,23 +88,22 @@ $criancas = $criancas->fetchAll(PDO::FETCH_ASSOC);
             <img src="http://localhost/TCC_PAPINHO/assets/imagens/Família.png" id="familia" class="categoria" onclick="subMenu('submenu-familia')">
             <img src="http://localhost/TCC_PAPINHO/assets/imagens/Emoções.png" id="emocao" class="categoria" onclick="subMenu('submenu-emocao')">
             <img src="http://localhost/TCC_PAPINHO/assets/imagens/Atividades.png" id="atividades" class="categoria" onclick="subMenu('submenu-atividades')">
-            <img src="http://localhost/TCC_PAPINHO/assets/imagens/fundo.png" class="categoria" onclick="tocarSom('triste')">
-            <img src="http://localhost/TCC_PAPINHO/assets/imagens/fundo.png" class="categoria" onclick="tocarSom('feliz')">
+
         </div>
         <!--submenu para fome-->
         <div class="submenu" id="submenu-fome" style="display: none;">
-            <img class="submenu-img" data-som="água" src="http://localhost/TCC_PAPINHO/assets/imagens/Água.png" onclick="tocarSom(this)">
-            <img class="submenu-img" data-som="comer" src="http://localhost/TCC_PAPINHO/assets/imagens/Fome.png" onclick="tocarSom(this)">
-            <img class="submenu-img" data-som="fruta" src="http://localhost/TCC_PAPINHO/assets/imagens/Frutas.png" onclick="tocarSom(this)">
-            <img class="submenu-img" data-som="lanche" src="http://localhost/TCC_PAPINHO/assets/imagens/Lanche.png" onclick="tocarSom(this)">
-            <img class="submenu-img" data-som="leite" src="http://localhost/TCC_PAPINHO/assets/imagens/Leite.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-som="água" data-id="6" src="http://localhost/TCC_PAPINHO/assets/imagens/Água.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-som="comer" data-id="18" src="http://localhost/TCC_PAPINHO/assets/imagens/Fome.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-som="fruta" data-id="19" src="http://localhost/TCC_PAPINHO/assets/imagens/Frutas.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-som="lanche" data-id="20" src="http://localhost/TCC_PAPINHO/assets/imagens/Lanche.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-som="leite" data-id="21" src="http://localhost/TCC_PAPINHO/assets/imagens/Leite.png" onclick="tocarSom(this)">
         </div>
         <!--submenu para familia -->
         <div class="submenu" id="submenu-familia" style="display: none;">
-            <img class="submenu-img" data-som="mae" src="http://localhost/TCC_PAPINHO/assets/imagens/Mãe.png" onclick="tocarSom(this)">
-            <img class=" submenu-img" data-som="pai" src="http://localhost/TCC_PAPINHO/assets/imagens/Pai.png" onclick="tocarSom(this)">
-            <img class="submenu-img" data-som="vó" src="http://localhost/TCC_PAPINHO/assets/imagens/Vovó.png" onclick="tocarSom(this)">
-            <img class="submenu-img" data-som="vô" src="http://localhost/TCC_PAPINHO/assets/imagens/Vovô.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-som="mae" data-id="12" src="http://localhost/TCC_PAPINHO/assets/imagens/Mãe.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-som="pai" data-id="11" src="http://localhost/TCC_PAPINHO/assets/imagens/Pai.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-som="vó" data-id="14" src="http://localhost/TCC_PAPINHO/assets/imagens/Vovó.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-som="vô" data-id="13" src="http://localhost/TCC_PAPINHO/assets/imagens/Vovô.png" onclick="tocarSom(this)">
         </div>
 
         <!--submenu para emocao -->
@@ -116,9 +115,9 @@ $criancas = $criancas->fetchAll(PDO::FETCH_ASSOC);
 
         <!--submenu para atividades -->
         <div class="submenu" id="submenu-atividades" style="display: none;">
-            <img class="submenu-img" data-id="" data-som="desenhar" src="http://localhost/TCC_PAPINHO/assets/imagens/Desenhar.png" onclick="tocarSom(this)">
-            <img class="submenu-img" data-id="" data-som="livro" src="http://localhost/TCC_PAPINHO/assets/imagens/Livro.png" onclick="tocarSom(this)">
-            <img class="submenu-img" data-id="" data-som="parquinho" src="http://localhost/TCC_PAPINHO/assets/imagens/Parquinho.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-id="15" data-som="desenhar" src="http://localhost/TCC_PAPINHO/assets/imagens/Desenhar.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-id="16" data-som="livro" src="http://localhost/TCC_PAPINHO/assets/imagens/Livro.png" onclick="tocarSom(this)">
+            <img class="submenu-img" data-id="17" data-som="parquinho" src="http://localhost/TCC_PAPINHO/assets/imagens/Parquinho.png" onclick="tocarSom(this)">
         </div>
 
     </div>
@@ -127,7 +126,7 @@ $criancas = $criancas->fetchAll(PDO::FETCH_ASSOC);
         <audio id="som-água" src="http://localhost/TCC_PAPINHO/assets/sounds/água.mp3"></audio>
         <audio id="som-fruta" src="http://localhost/TCC_PAPINHO/assets/sounds/fruta.mp3"></audio>
         <audio id="som-lanche" src="http://localhost/TCC_PAPINHO/assets/sounds/lanche.mp3"></audio>
-        <audio id="som-leite" src="http://localhost/TCC_PAPINHO/assets/sounds/leite.mp3"></audio>    
+        <audio id="som-leite" src="http://localhost/TCC_PAPINHO/assets/sounds/leite.mp3"></audio>
         <audio id="som-comer" src="http://localhost/TCC_PAPINHO/assets/sounds/fome.mp3"></audio>
         <audio id="som-desenhar" src="http://localhost/TCC_PAPINHO/assets/sounds/desenhar.mp3"></audio>
         <audio id="som-livro" src="http://localhost/TCC_PAPINHO/assets/sounds/livro.mp3"></audio>

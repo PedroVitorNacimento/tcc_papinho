@@ -15,7 +15,7 @@
     crossorigin="anonymous" />
 
   <!-- Estilo personalizado -->
-  <link rel="stylesheet" href="http://localhost/TCC_PAPINHO/assets/css/style.css" />
+  <link rel="stylesheet" href="http://localhost/TCC_PAPINHO/assets/css/style1.css" />
 
   <!-- Tema do SweetAlert2 para os alertas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.min.css">
@@ -27,54 +27,52 @@
 </head>
 
 <body>
-  <div class="form-container">
-    <!-- Formulário de cadastro -->
+  <div class="container mt-4">
+    <div class="form-container">
+      <!-- Formulário de cadastro -->
 
-    <!-- Campos do formulário -->
-    <label>Nome:</label>
-    <div class="input-group mb-3">
-      <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome completo" />
-    </div>
+      <!-- Campos do formulário -->
+      <label>Nome:</label>
+      <div class="input-group mb-3">
+        <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome completo" />
+      </div>
 
-    <label>Email:</label>
-    <div class="mb-3">
-      <div class="input-group">
-        <input type="email" name="email" id="email" class="form-control" placeholder="Insira seu email" />
+      <label>Email:</label>
+      <div class="mb-3">
+        <div class="input-group">
+          <input type="email" name="email" id="email" class="form-control" placeholder="Insira seu email" />
+        </div>
+      </div>
+
+      <label>Senha:</label>
+      <div class="input-group mb-3">
+        <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha..." />
+      </div>
+
+      <label>Confirmação de senha:</label>
+      <div class="input-group mb-3">
+        <input type="password" name="confirma_senha" id="confirma_senha" class="form-control" placeholder="Confirme a senha..." />
+      </div>
+
+      <label>Nome criança:</label>
+      <div class="input-group mb-3">
+        <input type="text" id="nome_crianca" name="nome_crianca" class="form-control" placeholder="Nome criança" />
+      </div>
+
+      <label>Data de nascimento</label>
+      <div class="input-group mb-3">
+        <input type="date" class="form-control" id="nascimento" name="nascimento" />
+      </div>
+
+
+
+      <!-- Botões -->
+      <div class="d-flex justify-content-between">
+        <button class="btn btn-secondary" onclick="history.back()">Voltar</button>
+        <button class="btn btn-primary" onclick="salvaFormulario()">Salvar</button>
       </div>
     </div>
-
-    <label>Senha:</label>
-    <div class="input-group mb-3">
-      <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha..." />
-    </div>
-
-    <label>Confirmação de senha:</label>
-    <div class="input-group mb-3">
-      <input type="password" name="confirma_senha" id="confirma_senha" class="form-control" placeholder="Confirme a senha..." />
-    </div>
-
-    <label>Nome criança:</label>
-    <div class="input-group mb-3">
-      <input type="text" id="nome_crianca" name="nome_crianca" class="form-control" placeholder="Nome criança" />
-    </div>
-
-    <label>Data de nascimento</label>
-    <div class="input-group mb-3">
-      <input type="date" class="form-control" id="nascimento" name="nascimento" />
-    </div>
-
-    <div class="input-group mb-3">
-      <textarea class="form-control" id="observacao" name="observacao"
-        placeholder="Descreva em poucas palavras as dificuldades da criança"></textarea>
-    </div>
-
-    <!-- Botões -->
-    <div class="d-flex justify-content-between">
-      <button class="btn btn-secondary" onclick="history.back()">Voltar</button>
-      <button class="btn btn-primary" onclick="salvaFormulario()">Salvar</button>
-    </div>
   </div>
-
   <script>
     function salvaFormulario() {
       let nome_form = document.getElementById("nome").value;
@@ -83,7 +81,7 @@
       let confirma_senha = document.getElementById("confirma_senha").value;
       let nome_crianca_form = document.getElementById("nome_crianca").value;
       let nascimento_form = document.getElementById("nascimento").value;
-      let observacao_form = document.getElementById("observacao").value;
+
 
       // Validações com SweetAlert
       if (nome_form == "") {

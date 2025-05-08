@@ -1,3 +1,15 @@
+<?php
+//verificando 
+session_start();
+
+// verificando se tem algum dado na session se não tiver ele manda para a pagina de login
+if (empty($_SESSION['id_responsavel'])) {
+    header("Location: login.php");
+    exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -15,7 +27,7 @@
         crossorigin="anonymous" />
 
     <!-- Estilo personalizado -->
-    <link rel="stylesheet" href="http://localhost/TCC_PAPINHO/assets/css/style.css" />
+    <link rel="stylesheet" href="http://localhost/TCC_PAPINHO/assets/css/style1.css" />
 
     <!-- Tema do SweetAlert2 para os alertas -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.min.css">
@@ -24,42 +36,75 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <title>Cadastro Responsável</title>
+
+
 </head>
 
-<body>
-    <div class="form-container">
-        <!-- Formulário de cadastro -->
+<body class="cadastro_body">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <div>
+                <a class="navbar-brand" href="#">
+                    <img src="http://localhost/TCC_PAPINHO/assets/imagens/fundo.png" class="rounded-circle me-2" width="40" height="40">
 
-        <!-- Campos do formulário -->
+                    Bem vindo(a): <?php echo $_SESSION['nome_responsavel']; ?>!
+                </a>
 
-        <label>Nome criança:</label>
-        <div class="input-group mb-3">
-            <input type="text" id="nome_crianca" name="nome_crianca" class="form-control" placeholder="Nome criança" />
+
+
+            </div>
+
+
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto"> <!-- ms-auto alinha à direita -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="frontend_home.php">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="frontend_relatorio.php">Gerar relatorio</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="http://localhost/TCC_PAPINHO/frontend/frontend_cadastro_logado.php">Cadastrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost/TCC_PAPINHO/backend/backand_logout.php">Sair</a>
+                    </li>
+                </ul>
+            </div>
         </div>
+    </nav>
 
-        <label>Data de nascimento</label>
-        <div class="input-group mb-3">
-            <input type="date" class="form-control" id="nascimento" name="nascimento" />
-        </div>
+    <div class="container mt-4">
+        <div class="form-container">
+            <!-- Formulário de cadastro -->
 
-        <div class="input-group mb-3">
-            <textarea class="form-control" id="observacao" name="observacao"
-                placeholder="Descreva em poucas palavras as dificuldades da criança"></textarea>
-        </div>
+            <!-- Campos do formulário -->
 
-        <!-- Botões -->
-        <div class="d-flex justify-content-between">
-            <button class="btn btn-secondary" onclick="history.back()">Voltar</button>
-            <button class="btn btn-primary" onclick="salvaFormulario()">Salvar</button>
+            <label>Nome criança:</label>
+            <div class="input-group mb-3">
+                <input type="text" id="nome_crianca" name="nome_crianca" class="form-control" placeholder="Nome criança" />
+            </div>
+
+            <label>Data de nascimento</label>
+            <div class="input-group mb-3">
+                <input type="date" class="form-control" id="nascimento" name="nascimento" />
+            </div>
+
+
+
+            <!-- Botões -->
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-secondary" onclick="history.back()">Voltar</button>
+                <button class="btn btn-primary" onclick="salvaFormulario()">Salvar</button>
+            </div>
         </div>
     </div>
-
     <script>
         function salvaFormulario() {
 
             let nome_crianca_form = document.getElementById("nome_crianca").value;
             let nascimento_form = document.getElementById("nascimento").value;
-            let observacao_form = document.getElementById("observacao").value;
 
             // Validações com SweetAlert
             if (nome_crianca_form == "") {

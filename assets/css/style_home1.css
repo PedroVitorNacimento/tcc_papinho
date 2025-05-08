@@ -1,3 +1,7 @@
+body {
+  background-image: url("http://localhost/TCC_PAPINHO/assets/imagens/BackGround_BrancoEAzulQuebra.png");
+}
+
 /* Estilo das imagens de categoria */
 .categoria {
   width: 150px;
@@ -48,4 +52,21 @@
 .select-crianca-pequeno {
   width: 100px;
   display: inline-block;
+}
+.swal2-popup.relatorio-popup {
+  max-height: 70vh;
+  overflow-y: auto;
+  font-size: 1rem;
+  text-align: left;
+}
+.formulario_relatorio {
+  background: rgb(243, 249, 249);
+  padding: 20px;
+  margin-top: 100px; /* espaço do topo */
+  margin-left: 450px; /* espaço do canto esquerdo */
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
 }

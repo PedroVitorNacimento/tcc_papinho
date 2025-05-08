@@ -4,18 +4,23 @@ body {
   background-repeat: no-repeat; /* ← Impede que ela se repita */
   background-position: center top; /* Centraliza no topo (ou só 'center') */
   background-size: 100% auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-size: cover; /* Preenche todo o espaço disponível */
+  background-position: center; /* Centraliza a imagem */
+
   height: 100vh;
   margin: 0;
   max-width: 100%;
   max-height: 10%;
 }
-
+.cadastro_body {
+  background-image: url("http://localhost/TCC_PAPINHO/assets/imagens/BackGround_BrancoEAzulQuebra.png");
+}
 .form-container {
   background: rgb(243, 249, 249);
   padding: 20px;
+  margin-top: 220px; /* espaço do topo */
+  margin-left: 450px; /* espaço do canto esquerdo */
+  align-items: center;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -50,4 +55,7 @@ body {
 
 .categoria:hover {
   transform: scale(1.05);
+}
+
+.formulario_relatorio {
 }

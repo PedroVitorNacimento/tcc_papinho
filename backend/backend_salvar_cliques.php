@@ -2,12 +2,14 @@
 
 <?php
 
+// iniciando a sessão pois é daqui que capturamos o id do responsavel
 session_start();
 
 
 // salvar_clique.php
 header('Content-Type: application/json');
 
+// verificando se a sessão foi startada  corretamente 
 if (!isset($_SESSION['id_responsavel'])) {
     echo json_encode(['message' => 'Sessão inválida ou expirada.']);
     exit;
@@ -17,7 +19,10 @@ if (!isset($_SESSION['id_responsavel'])) {
 // Receber os dados do JSON
 $dadosJson = file_get_contents("php://input");
 
+//salvado  os dados que vem do objeto em um array 
 $dados = json_decode($dadosJson, true);
+
+//salvando o id do responsavel na variavel
 $responsavelid = isset($_SESSION['id_responsavel']) ? intval($_SESSION['id_responsavel']) : null;
 
 // Verificar se os dados foram corretamente decodificados
