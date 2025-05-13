@@ -18,8 +18,32 @@ body {
 .form-container {
   background: rgb(243, 249, 249);
   padding: 20px;
-  margin-top: 220px; /* espaço do topo */
-  margin-left: 450px; /* espaço do canto esquerdo */
+  margin-top: 250px; /* espaço do topo */
+  margin-left: 590px; /* espaço do canto esquerdo */
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-container1 {
+  background: rgb(243, 249, 249);
+  padding: 20px;
+  margin-top: 250px; /* espaço do topo */
+  margin-left: 460px; /* espaço do canto esquerdo */
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-container2 {
+  background: rgb(243, 249, 249);
+  padding: 20px;
+  margin-top: 250px; /* espaço do topo */
+  margin-left: 470px; /* espaço do canto esquerdo */
   align-items: center;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);

@@ -28,7 +28,7 @@
 
 <body>
   <div class="container mt-4">
-    <div class="form-container">
+    <div class="form-container1">
       <!-- Formulário de cadastro -->
 
       <!-- Campos do formulário -->

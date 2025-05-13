@@ -22,7 +22,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="http://localhost/TCC_PAPINHO/assets/css/style.css" />
+  <link rel="stylesheet" href="http://localhost/TCC_PAPINHO/assets/css/style1.css" />
   <title>Login Papinho</title>
 </head>
 

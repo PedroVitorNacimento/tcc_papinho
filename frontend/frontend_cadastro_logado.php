@@ -76,7 +76,7 @@ if (empty($_SESSION['id_responsavel'])) {
     </nav>
 
     <div class="container mt-4">
-        <div class="form-container">
+        <div class="form-container2">
             <!-- Formulário de cadastro -->
 
             <!-- Campos do formulário -->
