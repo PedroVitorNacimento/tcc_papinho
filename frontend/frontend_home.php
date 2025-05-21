@@ -51,9 +51,10 @@ $criancas = $criancas->fetchAll(PDO::FETCH_ASSOC);
 
 
             </div>
-            <div class="navbar-brand">Selecione uma das crianças cadastradas</div>
+
             <!--colocando as crianças do usuario em um tag select para exibir todas as vrianças que aquele usuario cadastrou -->
-            <select id="select-crianca" class="form-control w-auto">
+            <select id="select-crianca" class="form-control w-25">
+                <option selected disabled>Selecione uma das crianças cadastradas</option>
                 <?php foreach ($criancas as $crianca): ?>
                     <option value="<?= $crianca['id_crianca'] ?>"><?= $crianca['nome_crianca'] ?></option>
                 <?php endforeach; ?>

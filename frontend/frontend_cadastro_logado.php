@@ -58,13 +58,13 @@ if (empty($_SESSION['id_responsavel'])) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto"> <!-- ms-auto alinha à direita -->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="frontend_home.php">Início</a>
+                        <a class="nav-link " aria-current="page" href="frontend_home.php">Início</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="frontend_relatorio.php">Gerar relatorio</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="http://localhost/TCC_PAPINHO/frontend/frontend_cadastro_logado.php">Cadastrar</a>
+                        <a class="nav-link active" href="http://localhost/TCC_PAPINHO/frontend/frontend_cadastro_logado.php">Cadastrar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="http://localhost/TCC_PAPINHO/backend/backand_logout.php">Sair</a>
