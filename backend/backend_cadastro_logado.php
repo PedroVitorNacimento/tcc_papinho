@@ -34,6 +34,22 @@ if (empty($nascimento)) {
 // Conexão com o banco de dados
 require_once "../database/conexao_banco.php";
 
+$query = "SELECT * FROM CRIANCA WHERE id_responsavel = $id_responsavel;";
+
+$retorno_banco = $conexao->query($query);
+$array_criancas = $retorno_banco->fetchAll(pdo::FETCH_ASSOC);
+
+foreach ($array_criancas as $crianca) {
+    if ($crianca['nome_crianca'] == $nome_crianca) {
+        retorna_para_javascript([
+            'status' => 'erro1',
+            'menssagem' => "ja existe uma criança com esse nome"
+        ]);
+    }
+}
+
+
+
 
 // Insere os dados da criança na tabela 'crianca'
 $query = "INSERT INTO crianca (nome_crianca, nascimento, id_responsavel) VALUES ('{$nome_crianca}','{$nascimento}','{$id_responsavel}')";

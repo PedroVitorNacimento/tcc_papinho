@@ -56,6 +56,7 @@ $criancas = $conexao->query($query)->fetchAll(PDO::FETCH_ASSOC);
 
     <!-- Formulário de relatório -->
     <div class="container mt-4">
+        <div class="titulo"> Relatorio de Interações</div>
         <div class="formulario_relatorio">
             <h4 class="mb-4">Gerar Relatório de Interações</h4>
 
@@ -131,22 +132,22 @@ $criancas = $conexao->query($query)->fetchAll(PDO::FETCH_ASSOC);
                         showCloseButton: true,
                         confirmButtonText: 'Fechar',
                         customClass: {
-                        popup: 'relatorio-popup'
+                            popup: 'relatorio-popup'
                         }
                     });
 
-        
+
                     // Função para imprimir o conteúdo do relatorio
                     document.getElementById('btnImprimir').addEventListener('click', function() {
-                    // Criar uma nova janela para impressão
-                    const janelaImpressao = window.open('', '', 'height=600,width=800');
-                    janelaImpressao.document.write('<html><head><title>Imprimir Relatório</title></head><body>');
-                    janelaImpressao.document.write(html); // Adiciona o HTML do relatório na janela
-                    janelaImpressao.document.write('</body></html>');
-                    janelaImpressao.document.close();
-                    janelaImpressao.print();
-                });
-            
+                        // Criar uma nova janela para impressão
+                        const janelaImpressao = window.open('', '', 'height=600,width=800');
+                        janelaImpressao.document.write('<html><head><title>Imprimir Relatório</title></head><body>');
+                        janelaImpressao.document.write(html); // Adiciona o HTML do relatório na janela
+                        janelaImpressao.document.write('</body></html>');
+                        janelaImpressao.document.close();
+                        janelaImpressao.print();
+                    });
+
                 }
             }, "json");
         }

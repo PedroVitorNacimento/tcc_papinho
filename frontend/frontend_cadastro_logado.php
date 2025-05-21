@@ -27,7 +27,7 @@ if (empty($_SESSION['id_responsavel'])) {
         crossorigin="anonymous" />
 
     <!-- Estilo personalizado -->
-    <link rel="stylesheet" href="http://localhost/TCC_PAPINHO/assets/css/style1.css" />
+    <link rel="stylesheet" href="http://localhost/TCC_PAPINHO/assets/css/style1.css?v=1" />
 
     <!-- Tema do SweetAlert2 para os alertas -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.min.css">
@@ -55,7 +55,6 @@ if (empty($_SESSION['id_responsavel'])) {
             </div>
 
 
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto"> <!-- ms-auto alinha à direita -->
                     <li class="nav-item">
@@ -76,7 +75,11 @@ if (empty($_SESSION['id_responsavel'])) {
     </nav>
 
     <div class="container mt-4">
+
+
+        <div class="titulo"> Cadastre uma criança nova</div>
         <div class="form-container2">
+            <h4 class="mb-4">Cadastrar Criança</h4>
             <!-- Formulário de cadastro -->
 
             <!-- Campos do formulário -->
@@ -128,8 +131,8 @@ if (empty($_SESSION['id_responsavel'])) {
                 .then((retorno) => {
                     console.log(retorno);
 
-                    if (retorno.status == "erro") {
-                        Swal.fire("Erro", "Erro ao cadastrar usuário", "error");
+                    if (retorno.status == "erro1") {
+                        Swal.fire("Erro", " Criança já Cadastrada !", "error");
                     } else {
                         Swal.fire({
                             title: "Cadastro realizado!",

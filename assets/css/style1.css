@@ -27,6 +27,13 @@ body {
   max-width: 400px;
 }
 
+/* Título centralizado */
+.titulo {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 24px;
+}
+
 .form-container1 {
   background: rgb(243, 249, 249);
   padding: 20px;
@@ -42,7 +49,7 @@ body {
 .form-container2 {
   background: rgb(243, 249, 249);
   padding: 20px;
-  margin-top: 250px; /* espaço do topo */
+  margin-top: 100px; /* espaço do topo */
   margin-left: 470px; /* espaço do canto esquerdo */
   align-items: center;
   border-radius: 10px;
@@ -81,5 +88,8 @@ body {
   transform: scale(1.05);
 }
 
-.formulario_relatorio {
+.navbar-expand-lg {
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
