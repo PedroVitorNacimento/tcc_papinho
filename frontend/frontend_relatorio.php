@@ -24,7 +24,7 @@ $criancas = $conexao->query($query)->fetchAll(PDO::FETCH_ASSOC);
     <title>Gerar Relatório - Papinho</title>
 
     <!-- CSS e bibliotecas -->
-    <link rel="stylesheet" href="http://localhost/TCC_PAPINHO/assets/css/style_home1.css" />
+    <link rel="stylesheet" href="http://localhost/TCC_PAPINHO/assets/css/style_home1.css?v=2" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.min.css">
 
@@ -45,10 +45,36 @@ $criancas = $conexao->query($query)->fetchAll(PDO::FETCH_ASSOC);
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="frontend_home.php">Início</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="frontend_relatorio.php">Gerar relatório</a></li>
-                    <li class="nav-item"><a class="nav-link" href="frontend_cadastro_logado.php">Cadastrar</a></li>
-                    <li class="nav-item"><a class="nav-link" href="http://localhost/TCC_PAPINHO/backend/backand_logout.php">Sair</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="frontend_home.php">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+                                <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z" />
+                            </svg>
+                            Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="frontend_relatorio.php">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-bar-graph" viewBox="0 0 16 16">
+                                <path d="M10 13.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-6a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm-2.5.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5zm-3 0a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5z" />
+                                <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
+                            </svg>
+                            Gerar relatório</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="frontend_cadastro_logado.php">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-person-fill-add" viewBox="0 0 16 16" style="margin-right: 5px;">
+                                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4" />
+                            </svg>
+                            Cadastrar</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="http://localhost/TCC_PAPINHO/backend/backand_logout.php">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
+                                <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                            </svg>
+                            Sair</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -58,7 +84,7 @@ $criancas = $conexao->query($query)->fetchAll(PDO::FETCH_ASSOC);
     <div class="container mt-4">
         <div class="titulo"> Relatorio de Interações</div>
         <div class="formulario_relatorio">
-            <h4 class="mb-4">Gerar Relatório de Interações</h4>
+            <h4 class="mb-4 text-center">Gerar Relatório de Interações</h4>
 
             <!-- Data inicial -->
             <label for="data_inicio">Data inicial:</label>
@@ -84,7 +110,12 @@ $criancas = $conexao->query($query)->fetchAll(PDO::FETCH_ASSOC);
 
             <!-- Botão de gerar -->
             <div class="d-flex justify-content-between">
-                <button class="btn btn-primary" onclick="gerarRelatorio()">Gerar Relatório</button>
+                <button class="btn btn-primary" onclick="gerarRelatorio()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-bar-graph" viewBox="0 0 16 16">
+                        <path d="M10 13.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-6a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm-2.5.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5zm-3 0a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5z" />
+                        <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
+                    </svg>
+                    Gerar Relatório</button>
             </div>
         </div>
 
@@ -112,7 +143,7 @@ $criancas = $conexao->query($query)->fetchAll(PDO::FETCH_ASSOC);
             // Requisição ao backend via POST
             $.post("http://localhost/TCC_PAPINHO/backend/backend_relatorio.php", body_backend, function(retorno) {
                 if (retorno.status === "erro") {
-                    Swal.fire("Erro", "Erro ao gerar relatório", "error");
+                    Swal.fire("Erro", "Não há registo na data selecionada !!", "error");
                 } else {
                     // Montar HTML com os dados retornados
                     let html = "<div style='text-align:left'><h5>Relatório de Interações</h5><ul class='list-group'>";
