@@ -45,7 +45,7 @@ $criancas = $criancas->fetchAll(PDO::FETCH_ASSOC);
                 <a class="navbar-brand" href="#">
                     <img src="http://localhost/TCC_PAPINHO/assets/imagens/fundo.png" class="rounded-circle me-2" width="40" height="40">
 
-                    Bem vindo(a): <?php echo $_SESSION['nome_responsavel']; ?>!
+                    Bem-vindo(a): <?php echo $_SESSION['nome_responsavel']; ?>!
                 </a>
 
 
@@ -79,7 +79,7 @@ $criancas = $criancas->fetchAll(PDO::FETCH_ASSOC);
                                 <path d="M10 13.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-6a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm-2.5.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5zm-3 0a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5z" />
                                 <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
                             </svg>
-                            Gerar relatorio
+                            Gerar relatório
                         </a>
                     </li>
                     <li>
@@ -111,8 +111,8 @@ $criancas = $criancas->fetchAll(PDO::FETCH_ASSOC);
 
         <!--grid com imagens representando categorias-->
         <div class="grid-categorias">
-            <img src="http://localhost/TCC_PAPINHO/assets/imagens/Fome_sede.png" id="comida" class="categoria" onclick="subMenu('submenu-fome')">
-            <img src="http://localhost/TCC_PAPINHO/assets/imagens/Família.png" id="familia" class="categoria" onclick="subMenu('submenu-familia')">
+            <img src="http://localhost/TCC_PAPINHO/assets/imagens/Fome_sedeNovo.png" id="comida" class="categoria" onclick="subMenu('submenu-fome')">
+            <img src="http://localhost/TCC_PAPINHO/assets/imagens/FamíliaNovo.png" id="familia" class="categoria" onclick="subMenu('submenu-familia')">
             <img src="http://localhost/TCC_PAPINHO/assets/imagens/Emoções.png" id="emocao" class="categoria" onclick="subMenu('submenu-emocao')">
             <img src="http://localhost/TCC_PAPINHO/assets/imagens/Atividades.png" id="atividades" class="categoria" onclick="subMenu('submenu-atividades')">
 
